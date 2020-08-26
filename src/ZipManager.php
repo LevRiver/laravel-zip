@@ -1,4 +1,4 @@
-<?php namespace ZanySoft\Zip;
+<?php namespace Macellan\Zip;
 
 use \ZanySoft\Zip\Zip;
 use \Exception;
@@ -6,7 +6,7 @@ use \Exception;
 /**
  * Multiple ZipArchive manager
  *
- * @package     ZanySoft/Zip
+ * @package     Macellan/Zip
  * @author      ZanySof <info@zanysoft.co>
  * @license     MIT
  *

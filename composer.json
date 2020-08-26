@@ -1,13 +1,18 @@
 {
-    "name": "zanysoft/laravel-zip",
+    "name": "macellan/laravel-zip",
     "description": "laravel-zip is the world's leading zip utility for file compression and backup.",
     "license": "MIT",
-    "homepage": "http://www.zanysoft.co",
+    "homepage": "https://macellan.net",
     "authors": [
         {
             "name": "Zany Soft",
             "email": "info@zanysoft.co",
             "homepage": "http://www.zanysoft.co"
+        },
+        {
+            "name": "Fatih Aytekin",
+            "email": "fatih.aytekin@macellan.net",
+            "homepage": "https://macellan.net"
         }
     ],
     "keywords": [
@@ -25,16 +30,16 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ZanySoft\\Zip\\ZipServiceProvider"
+                "Macellan\\Zip\\ZipServiceProvider"
             ],
             "aliases": {
-                "Zip": "ZanySoft\\Zip\\ZipFacade"
+                "Zip": "Macellan\\Zip\\ZipFacade"
             }
         }
     },
     "autoload": {
         "psr-4": {
-           "ZanySoft\\Zip\\": "src"
+           "Macellan\\Zip\\": "src"
          }
     },
     "require": {

@@ -1,4 +1,4 @@
-<?php namespace ZanySoft\Zip;
+<?php namespace Macellan\Zip;
 
 use \ZipArchive;
 use \Exception;
@@ -8,7 +8,7 @@ use \Exception;
  *
  * This class provide methods to handle single zip archive
  *
- * @package     ZanySoft\Zip
+ * @package     Macellan\Zip
  * @author      ZanySoft <info@zanysoft.co>
  * @license     MIT
  *

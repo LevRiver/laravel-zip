@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanySoft\Zip;
+namespace Macellan\Zip;
 
 use Illuminate\Support\ServiceProvider;
 

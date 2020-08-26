@@ -1,4 +1,4 @@
-# zanysoft/laravel-zip
+# Macellan/laravel-zip
 
 > laravel-zip is the world's leading zip utility for file compression and backup.
 
@@ -7,20 +7,20 @@ This library was written to simplify and automate Zip files management using [PH
 ### Installation
 Require this package in your composer.json and update composer. This will download the package.
 
-    composer require zanysoft/laravel-zip
+    composer require macellan/laravel-zip
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
-    ZanySoft\Zip\ZipServiceProvider::class,
+    Macellan\Zip\ZipServiceProvider::class,
 
 You can optionally use the facade for shorter code. Add this to your facades:
 
-    'Zip' => ZanySoft\Zip\ZipFacade::class,
+    'Zip' => Macellan\Zip\ZipFacade::class,
 
 
 ## Zip usage
 
-use `ZanySoft\Zip\Zip` class only use `Zip` is made to handle a zip file.
+use `Macellan\Zip\Zip` class only use `Zip` is made to handle a zip file.
 
 - include the Zip class at top:
 ```php
@@ -181,11 +181,11 @@ use Zip;
 
 ## ZipManager usage
 
-The `\ZanySoft\Zip\ZipManager` can handle multiple `ZanySoft\Zip\Zip` objects.
+The `\Macellan\Zip\ZipManager` can handle multiple `Macellan\Zip\Zip` objects.
 
 - include the Zip and ZipManager class at top:
 ```php
-use ZanySoft\Zip\ZipManager;
+use Macellan\Zip\ZipManager;
 use Zip;
 ```
 
@@ -223,7 +223,7 @@ use Zip;
 - Add files to all zips:
 
     ```php    
-    $manager-> = new ZipManager();
+    $manager = new ZipManager();
 
     // register existing zips
     $manager->addZip( Zip::open('/path/to/my/file1.zip') )
