@@ -1,10 +1,10 @@
 <?php namespace Macellan\Zip;
 
-use \ZipArchive;
-use \Exception;
+use ZipArchive;
+use Exception;
 
 /**
- * ZanySoft\Zip - ZipArchive toolbox
+ * Macellan\Zip - ZipArchive toolbox
  *
  * This class provide methods to handle single zip archive
  *
@@ -117,7 +117,7 @@ class Zip {
      *
      * @param   string $zip_file ZIP file name
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     public static function open($zip_file) {
 
@@ -168,7 +168,7 @@ class Zip {
      * @param   string $zip_file ZIP file name
      * @param   bool $overwrite overwrite existing file (if any)
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     public static function create($zip_file, $overwrite = false) {
 
@@ -203,7 +203,7 @@ class Zip {
      *
      * @param   string $mode [HIDDEN, ZANYSOFT, ALL, NONE]
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     final public function setSkipped($mode) {
 
@@ -235,7 +235,7 @@ class Zip {
      *
      * @param   string $password
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     final public function setPassword($password) {
 
@@ -261,7 +261,7 @@ class Zip {
      *
      * @param   string $path
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     final public function setPath($path) {
 
@@ -269,7 +269,7 @@ class Zip {
             throw new Exception("Not existent path");
         }
 
-        $this->path = $path[strlen($path) - 1] == "/" ? $path : $path . "/";
+        $this->path = ($path[strlen($path) - 1] == "/" ? $path : $path . "/");
 
         return $this;
 
@@ -291,7 +291,7 @@ class Zip {
      *
      * @param   int $mask
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     final public function setMask($mask) {
 
@@ -324,7 +324,7 @@ class Zip {
      *
      * @param   \ZipArchive $zip
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     final public function setArchive(ZipArchive $zip) {
 
@@ -467,7 +467,7 @@ class Zip {
      * @param   mixed $file_name_or_array filename to add or an array of filenames
      * @param   bool $flatten_root_folder in case of directory, specify if root folder should be flatten or not
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     public function add($file_name_or_array, $flatten_root_folder = false) {
 
@@ -508,7 +508,7 @@ class Zip {
      *
      * @param   mixed $file_name_or_array filename to delete or an array of filenames
      *
-     * @return  \ZanySoft\Zip\Zip
+     * @return  \Macellan\Zip\Zip
      */
     public function delete($file_name_or_array) {
 
@@ -598,7 +598,7 @@ class Zip {
      */
     private function addItem($file, $flatroot = false, $base = null) {
 
-        $file = is_null($this->path) ? $file : $this->path . $file;
+        $file = (is_null($this->path) ? $file : $this->path . $file);
 
         $real_file = str_replace('\\', '/', realpath($file));
 
@@ -620,7 +620,7 @@ class Zip {
 
             if (!$flatroot) {
 
-                $folder_target = is_null($base) ? $real_name : $base . $real_name;
+                $folder_target = (is_null($base) ? $real_name : $base . $real_name);
 
                 $new_folder = $this->zip_archive->addEmptyDir($folder_target);
 
@@ -642,7 +642,7 @@ class Zip {
 
                 $file_real = $path->getPathname();
 
-                $base = is_null($folder_target) ? null : ($folder_target . "/");
+                $base = (is_null($folder_target) ? null : ($folder_target . "/"));
 
                 try {
 
@@ -658,7 +658,7 @@ class Zip {
 
         } else if (is_file($real_file)) {
 
-            $file_target = is_null($base) ? $real_name : $base . $real_name;
+            $file_target = (is_null($base) ? $real_name : $base . $real_name);
 
             $add_file = $this->zip_archive->addFile($real_file, $file_target);
 
